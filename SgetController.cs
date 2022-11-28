@@ -18,8 +18,6 @@ namespace AWS3.Controllers
     public class SgetController : ControllerBase
     {
         //將所有TXT都上傳
-        //private const string existingBucketName = "twciccrmqa01-s3data";安麗QA
-        //private const string existingBucketName = "twciccrmpd01-s3data";//安麗PD
         private const string existingBucketName = "jimmy-wang-keenbest-test";
         private const string directoryPath = @"C:\Users\WangNJ\Desktop\AWS3\AWS3";
         // The example uploads only .txt files.
@@ -27,7 +25,6 @@ namespace AWS3.Controllers
         private const string wildCard = "*.txt";
         // Specify your bucket region (an example region is shown).
         private static readonly RegionEndpoint bucketRegion = RegionEndpoint.APNortheast1;
-        //private static readonly RegionEndpoint bucketRegion = RegionEndpoint.APEast1;//安麗PD
         public async Task<IActionResult> Get()
         {
             Dictionary<string, string> lstReutn = new Dictionary<string, string>();
@@ -94,7 +91,6 @@ namespace AWS3.Controllers
         [HttpGet("{*key}")]
         public async  Task<IActionResult> GetKey(string key)
         {
-            //var credentials = new BasicAWSCredentials("AKIAWCPJOISFC3HQM2YK", "ZN/dPX+DDhPlTyVJzB4Kc/p9kC4fDiJCGKn4l/9Z");
             var bytes = new byte[0];
             var s3Client = new AmazonS3Client();
             string title = "";
